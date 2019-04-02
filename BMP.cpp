@@ -2,7 +2,8 @@
 using namespace std;
 #define max_resources 200
 
-default_random_engine gen = default_random_engine(8);
+int rd;
+default_random_engine gen;
 uniform_real_distribution<double> dis(0,1);
 
 class Request
@@ -67,8 +68,10 @@ priority_queue<pair<double, int> > ReRo[max_resources];
 priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > ans;
 void solve();
 
-int main()
+int main(int argc, char** argv)
 {
+    rd = atoi(argv[1]);
+    gen.seed(rd);
     freopen("request_test.txt", "r", stdin);
     int ntimeslots;
     cin >> ntimeslots;
