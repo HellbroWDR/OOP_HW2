@@ -72,7 +72,8 @@ int main(int argc, char** argv)
 {
     rd = atoi(argv[1]);
     gen.seed(rd);
-    freopen("request_test.txt", "r", stdin);
+    freopen("request2.txt", "r", stdin);
+    freopen("dai2.txt", "w", stdout);
     int ntimeslots;
     cin >> ntimeslots;
     while(ntimeslots--)
